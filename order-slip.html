@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Processing</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(-45deg, #061b4b, #264d94, #6a1b67, #7c214c, #c86591, #d9bb62, #8cca7d, #1d8c77);
+      background-size: 400% 400%;
+      color: #0c0606;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      animation: waveAnimation 5s infinite linear;
+    }
+
+    @keyframes waveAnimation {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    form {
+      max-width: 500px;
+      background-color: rgb(49, 2, 49);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1, h2, p {
+      color: #06b42c;
+    }
+
+    #order-details {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: rgba(240, 177, 6, 0.658);
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 12px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid #5cb85c;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #5cb85c;
+      color: #5f0404;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #75d607;
+    }
+
+    #confirmationSection {
+      margin-top: 30px;
+      display: none;
+    }
+
+    #buyer-info {
+      text-align: left;
+    }
+
+    #buyer-info p {
+      margin-bottom: 10px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Function to extract query parameters from the URL
+      function getQueryParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      // Update order details on page load
+      function updateOrderDetails() {
+        const productNameElement = document.getElementById('productName');
+        const productPriceElement = document.getElementById('productPrice');
+        const orderIdElement = document.getElementById('orderId');
+
+        // Get order details from query parameters
+        const productName = getQueryParameter('product') || 'Product Name';
+        const productPrice = getQueryParameter('price') || 'Product Price';
+        const orderId = getQueryParameter('orderId') || 'Order ID';
+
+        // Update the content
+        productNameElement.textContent = productName;
+        productPriceElement.textContent = productPrice;
+        orderIdElement.textContent = orderId;
+      }
+
+      // Call the updateOrderDetails function on page load
+      updateOrderDetails();
+    });
+
+    function confirmOrder() {
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const contactNumber = document.getElementById('contactNumber').value;
+
+      // Validate that all required fields are filled
+      if (name.trim() === '' || address.trim() === '' || contactNumber.trim() === '') {
+        alert('Please enter your name, address, and contact number before confirming the order.');
+        return;
+      }
+
+      // Validate that contact number is not empty
+      if (!/^\d+$/.test(contactNumber)) {
+        alert('Please enter a valid contact number.');
+        return;
+      }
+
+      // Proceed with order confirmation
+      document.getElementById('buyerName').textContent = name;
+      document.getElementById('buyerAddress').textContent = address;
+      document.getElementById('buyerContactNumber').textContent = contactNumber;
+      document.getElementById('confirmationSection').style.display = 'block';
+      document.getElementById('orderDetailsSection').style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+  <div class="snowflake"></div>
+  <div class="shooting-star"></div>
+  <form>
+    <div id="orderDetailsSection">
+      <h1>Order Details</h1>
+
+      <div id="order-details">
+        <p><strong>Product:</strong> <span id="productName">Loading...</span></p>
+        <p><strong>Price:</strong> <span id="productPrice">Loading...</span></p>
+        <p><strong>Order ID:</strong> <span id="orderId">Loading...</span></p>
+      </div>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" placeholder="Your address" required>
+
+      <label for="contactNumber">Contact Number:</label>
+      <input type="tel" id="contactNumber" name="contactNumber" placeholder="Your contact number" required>
+
+      <button type="button" onclick="confirmOrder()">Confirm Order</button>
+    </div>
+
+    <div id="confirmationSection">
+      <h2>Order Confirmation</h2>
+
+      <div id="buyer-info">
+        <p><strong>Name:</strong> <span id="buyerName">Loading...</span></p>
+        <p><strong>Address:</strong> <span id="buyerAddress">Loading...</span></p>
+        <p><strong>Contact Number:</strong> <span id="buyerContactNumber">Loading...</span></p>
+      </div>
+
+      <p>Thank you for your order!</p>
+    </div>
+  </form>
+</body>
+</html>

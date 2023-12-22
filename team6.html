@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>L'HIVER Winter Fashion</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" type="x-icon" href="l'hiverlogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="w3-content" style="max-width:1200px;">
+<!--Welcome-page-->
+  <div class="overlay" id="welcomeOverlay">
+    <div class="welcome-page">
+        <h1>L'HIVER Winter Fashion</h1>
+        <h2>"Welcome to L'Hiver, where winter whispers its magic and style takes flight.
+        <br> 
+            Step inside and discover a world of cozy knits, luxurious textures, 
+            and timeless silhouettes that will make you fall in love with the coldest season."</h2>
+        <p>Explore amazing content by clicking the button below.</p>
+        <button class="enter-button" onclick="enterWebsite()">Enter</button>
+    </div>
+</div>
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-top" style="z-index:3;width:250px; text-align: center;" id="mysidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>L'HIVER</b></h3>
+    <img src="l'hiverlogo.png" alt="L'HIVER Logo" style="width: 100px; height: auto;">
+  </div>
+  <div class="icon-bar">
+    <a class="active" href="#homeSection" onclick="refreshHomePage()"><i class="fa fa-home"></i></a>
+    <a href="#" onclick="redirectToLoginPage()"><i class="fa fa-user"></i></a>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#glovesSection" class="w3-bar-item w3-button">Gloves</a>
+    <a href="#topwearSection" class="w3-bar-item w3-button">Top Wear</a>
+    <a href="#bottomwearSection" class="w3-bar-item w3-button">Bottom Wear</a>
+    <a href="#headwearSection" class="w3-bar-item w3-button">Head Wear</a>
+    <a href="#footwearSection" class="w3-bar-item w3-button">Foot Wear</a>
+    <a href="#scarfSection" class="w3-bar-item w3-button">Scarf</a>
+  </div>
+  <a href="#aboutus" class="w3-bar-item w3-button w3-padding">About Us</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
+  <a href="#subscribe"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">L'HIVER</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()">
+    <i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-top:64px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Shoes Section-Top header -->
+  <header id="footwearSection" class="w3-container w3-xlarge">
+    <p class="w3-left">Foot Wear</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-bar-item w3-button"></i>
+      <i class="fa fa-search w3-right w3-bar-item w3-button "></i>
+    </p>
+  </header>
+
+  <!-- Shoes Section-Image header -->
+  <div class="w3-display-container w3-container" id="footwear">
+    <img src="footwearlogo.png" alt="FootWear" style="width:20px; height: auto;">
+    <p>8 items</p>
+  </div>
+
+  <!-- Shoes Section-Product grid -->
+  <div class="w3-row w3-grayscale">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="shoes1.jpg" style="width:100%">
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Warm Wonders', 730.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Warm Wonders<br><b>&#8369;730.00</b></p>
+      </div>
+
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="shoes2.jpg" style="width:100%">
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Swift Boots', 710.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Swift Boots<br><b>&#8369;710.00</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="shoes3.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Arcane Boots', 690.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Arcane Boots<br><b>&#8369;690.00</b></p>
+      </div>
+
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="shoes4.png" style="width:100%">
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Rapid Boots', 750.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Rapid Boots<br><b>&#8369;750.00</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="shoes5.png" style="width:100%">
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Tough Boots', 700.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Tough Boots<br><b>&#8369;700.00</b></p>
+      </div>
+
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="shoes6.png" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Tundra Toughs', 720.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Tundra Toughs<br><b class="w3-text-white">&#8369;720.00</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="shoes7.png" style="width:100%">
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Arctic Aura', 250.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Arctic Aura<br><b>&#8369;250.00</b></p>
+      </div>
+
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="shoes8.png" style="width:100%">
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Blizzard Breaks', 720.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Blizzard Breaks<br><b>&#8369;720.00</b></p>
+      </div>
+    </div>
+  </div>
+
+<!--Head Wear Section-Top Header-->
+  <header id="headwearSection" class="w3-container w3-xlarge">
+    <p class="w3-left">Head Wear</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-bar-item w3-button"></i>
+      <i class="fa fa-search w3-right w3-bar-item w3-button "></i>
+    </p>
+  </header>
+<!--Head Wear Section-Image Header-->
+<div class="w3-display-container w3-container" id="headwear">
+  <img src="headwearlogo.png" alt="HeadWear" style="width:20px; height: auto;">
+  <p>8 items</p>
+</div>
+
+  
+<!--Head Wear Section-Product Grid-->
+<div class="w3-row w3-grayscale">
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="head1.png" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Guard Beanies', 2200.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Guard Beanies<br><b>&#8369;2,200.00</b></p>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="head2.png" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Cardinal Beanies', 1760.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Cardinal Beanies<br><b>&#8369;1,760.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="head3.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">New</span>
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Knights Vow', 2200.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Knight's Vow<br><b>&#8369;2,200.00</b></p>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="head4.png" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Frost Flakes', 3000.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Frost Flakes<br><b>&#8369;3,000.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="head5.png" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Abyssal Hat', 2400.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Abyssal Hat<br><b>&#8369;2,400.00</b></p>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="head6.png" style="width:100%">
+        <span class="w3-tag w3-display-topleft">Sale</span>
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Liandry Lament', 3200.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Liandry's Lament<br><b class="w3-text-white">&#8369;3,200.00</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="head7.png" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Winter Whimsy', 3200.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Winter Whimsy<br><b>&#8369;3,200.00</b></p>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="head8.png" style="width:100%">
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Spectre Cowl', 1250.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Spectre's Cowl<br><b>&#8369;1,250.00</b></p>
+    </div>
+  </div>
+</div>
+
+<!--Bottom Wear Section-Top Header-->
+<header id="bottomwearSection" class="w3-container w3-xlarge">
+  <p class="w3-left">Bottom Wear</p>
+  <p class="w3-right">
+    <i class="fa fa-shopping-cart w3-bar-item w3-button"></i>
+    <i class="fa fa-search w3-right w3-bar-item w3-button "></i>
+  </p>
+</header>
+<!--Bottom Wear Section-Image Header-->
+<div class="w3-display-container w3-container" id="bottomwear">
+<img src="bottomwearlogo.png" alt="BottomWear" style="width:20px; height: auto;">
+<p>8 items</p>
+</div>
+
+<!--Bottom Wear Section-Product Grid-->
+<div class="w3-row w3-grayscale">
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="bw1.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Winged Moon', 800.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Winged Moon<br><b>&#8369;800.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="bw2.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Steel Legplates', 630.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Steel Legplates<br><b>&#8369;630.00</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="bw3.png" style="width:100%">
+      <span class="w3-tag w3-display-topleft">New</span>
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Carapean Pants', 890.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Carapean Pants<br><b>&#8369;890.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="bw4.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Plate Greaves', 550.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Plate Greaves<br><b>&#8369;550.00</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="bw5.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple"onclick="redirectToOrderSlip('Glacier Gleamers', 900.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Glacier Gleamers<br><b>&#8369;900.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="bw6.png" style="width:100%">
+      <span class="w3-tag w3-display-topleft">Sale</span>
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Silk Culottes', 620.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Silk Culottes<br><b class="w3-text-white">&#8369;620.00</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="bw7.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Frozen Chausses', 600.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Frozen Chausses<br><b>&#8369;600.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="bw8.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Wolf Leggings', 510.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Wolf Leggings<br><b>&#8369;510.00</b></p>
+  </div>
+</div>
+</div>
+
+<!--Jacket Section-Top Header-->
+<header id="topwearSection" class="w3-container w3-xlarge">
+  <p class="w3-left">Top Wear</p>
+  <p class="w3-right">
+    <i class="fa fa-shopping-cart w3-bar-item w3-button"></i>
+    <i class="fa fa-search w3-right w3-bar-item w3-button "></i>
+  </p>
+</header>
+<!--Top Wear Section-Image Header-->
+<div class="w3-display-container w3-container" id="topwear">
+<img src="topwearlogo.png" alt="TopWear" style="width:20px; height: auto;">
+  <p>8 items</p>
+</div>
+
+<!--Top Wear Section-Product Grid-->
+<div class="w3-row w3-grayscale">
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="top1.jpg" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Hoarfrost', 1980.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Hoarfrost<br><b>&#8369;1,980.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="top2.jpg" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Twilight Serene', 2100.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Twilight Serene<br><b>&#8369;2,100.00</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="top3.png" style="width:100%">
+      <span class="w3-tag w3-display-topleft">New</span>
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Brute Force Weave', 1870.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Brute Weave<br><b>&#8369;1,870.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="top4.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Antique Cuirass', 2170.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Antique Cuirass<br><b>&#8369;2,170.00</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="top5.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Blade Dreich', 1960.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Blade Dreich<br><b>&#8369;1,960.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="top6.png" style="width:100%">
+      <span class="w3-tag w3-display-topleft">Sale</span>
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Dread Cashmere', 1730.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Dread Cashmere<br><b class="w3-text-white">&#8369;1,730.00</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="top7.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Resist Cloak', 2220.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Resist Cloak<br><b>&#8369;2,220.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="top8.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Polar Scud', 1020.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Polar Scud<br><b>&#8369;1,020.00</b></p>
+  </div>
+</div>
+</div>
+
+<!--Gloves Section-Top Header-->
+<header id="glovesSection" class="w3-container w3-xlarge">
+  <p class="w3-left">Gloves</p>
+  <p class="w3-right">
+    <i class="fa fa-shopping-cart w3-bar-item w3-button"></i>
+    <i class="fa fa-search w3-right w3-bar-item w3-button "></i>
+  </p>
+</header>
+<!--Gloves Section-Image Header-->
+<div class="w3-display-container w3-container" id="gloves">
+<img src="gloveslogo.png" alt="Gloves" style="width:20px; height: auto;">
+<p>8 items</p>
+</div>
+
+<!--Gloves Section-Product Grid-->
+<div class="w3-row w3-grayscale">
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="gloves1.jpg" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Quantum', 149.99)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Quantum<br><b>&#8369;149.99</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="gloves2.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Grip Gauntlet', 169.99)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Grip Gauntlet<br><b>&#8369;169.99</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="gloves3.png" style="width:100%">
+      <span class="w3-tag w3-display-topleft">New</span>
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Storm Powermitts', 129.99)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Storm Powermitts<br><b>129.99</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="gloves4.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('NexGen Gloves', 179.99)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>NexGen Gloves<br><b>&#8369;179.99</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="gloves5.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Touch Gauntlet', 159.99)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Touch Gauntlet<br><b>&#8369;159.99</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="gloves6.png" style="width:100%">
+      <span class="w3-tag w3-display-topleft">Sale</span>
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Strike Gauntlet' , 189.99)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Strike Gauntlet<br><b class="w3-text-white">&#8369;189.99</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="gloves7.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Apex Gloves', 199.99)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Apex Gloves<br><b>&#8369;199.99</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="gloves8.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Quantum Fury', 149.99)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Quantum Fury<br><b>&#8369;149.99</b></p>
+  </div>
+</div>
+</div>
+
+<!--Scarf Section-Top Header-->
+<header id="scarfSection" class="w3-container w3-xlarge">
+  <p class="w3-left">Scarf</p>
+  <p class="w3-right">
+    <i class="fa fa-shopping-cart w3-bar-item w3-button"></i>
+    <i class="fa fa-search w3-right w3-bar-item w3-button "></i>
+  </p>
+</header>
+<!--Scarf Section-Image Header-->
+<div class="w3-display-container w3-container" id="scarf">
+<img src="scarflogo.png" alt="Scarf" style="width:20px; height: auto;">
+<p>8 items</p>
+</div>
+<!--Scarf Section-Product Grid-->
+<div class="w3-row w3-grayscale">
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="scarf1.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+      <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Frostweave', 259.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Frostweave<br><b>&#8369;259.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="scarf2.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+      <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Embrace Shawl', 299.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Embrace Shawl<br><b>&#8369;299.00</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="scarf3.png" style="width:100%">
+      <span class="w3-tag w3-display-topleft">New</span>
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Silk Drapery', 229.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Silk Drapery<br><b>&#8369;229.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="scarf4.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Celestial Veil', 329.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Celestial Veil<br><b>&#8369;329.00</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="scarf5.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Whisper Muffler', 279.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Whisper Muffler<br><b>&#8369;279.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="scarf6.png" style="width:100%">
+      <span class="w3-tag w3-display-topleft">Sale</span>
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Mystic Mirage Scarf', 349.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <p>Mystic Scarf<br><b class="w3-text-white">&#8369;349.00</b></p>
+  </div>
+</div>
+
+<div class="w3-col l3 s6">
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="scarf7.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Aetherial Essence', 379.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Aetherial Essence<br><b>&#8369;379.00</b></p>
+  </div>
+
+  <div class="w3-container">
+    <div class="w3-display-container">
+      <img src="scarf8.png" style="width:100%">
+      <div class="w3-display-middle w3-display-hover">
+        <button class="w3-button w3-purple" onclick="redirectToOrderSlip('Cozy Cloak', 309.00)">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Cozy Cloak<br><b>&#8369;309.00</b></p>
+  </div>
+</div>
+</div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32" id="subscribe">
+    <h1>Subscribe</h1>
+    <p>To get special offers and VIP treatment:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" onclick="showMessage('Subscribed Successfully!')" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
+  
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">How's our product?</h3>
+    <p>Please leave a comment upon receiving the product.</p>
+    
+    <form id="myForm" action="/action_page.php" target="_blank">
+    <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+    <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required
+    name="Email">
+    <input class="w3-input w3-section w3-border" type="text" placeholder="Comment"
+    required name="Comment">
+    <button class="w3-button w3-white w3-section" type="button" onclick="showMessage('Message Sent Successfully!')">
+    <i class="fa fa-paper-plane"></i> SEND MESSAGE
+    </button>
+    </form>
+    <script>
+      function showMessage(message) {
+          alert(message);
+      }
+    </script>
+    <style>
+      .w3-input.w3-section.w3-border {
+        border-radius: 10px;
+      }
+      .w3-input.w3-border {
+      border-radius: 10px;
+      }
+      </style>
+    </div>
+
+      <div class="w3-container w3-padding-32" id="aboutus">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About Us</h3>
+        <p><b>Introducing L'HIVER Winter Fashion: Where Style Meets Warmth!</b>
+<br>
+          Embrace the season with elegance and warmth as <b>L'HIVER Winter Fashion</b> unveils its exquisite collection of winter essentials. Our curated selection of cozy and chic apparel is designed to make you stand out in the frosty landscape.
+<br>
+<br>          
+          <b>Discover Winter Elegance:</b>
+<br>
+          Wrap yourself in luxury with our handpicked assortment of premium winter wear. From timeless wool coats to trendy knit sweaters, each piece is a testament to the fusion of fashion and comfort.
+<br>
+<br>         
+          <b>Chase the Chill in Style:</b>
+<br>         
+          Step into the cold with confidence! Our fashion-forward accessories, including stylish scarves, gloves, and hats, are crafted to complement your winter wardrobe effortlessly. Be the trendsetter wherever you go.
+<br>
+<br>          
+          <b>Exclusive Winter Promotions:</b>
+<br>
+          To celebrate the season of snow and style, we're delighted to offer exclusive promotions for our valued customers. Enjoy special discounts on select items, limited-time bundle deals, and complimentary gift wrapping for that perfect winter surprise.
+<br>
+<br>         
+          <b>Save the Date: Winter Fashion Showcase!</b>
+<br>          
+          Join us on December 25, 2023 for a glamorous Winter Fashion Showcase at our flagship store. Witness the latest trends, get styling tips from our experts, and indulge in a shopping experience like no other.
+<br>
+<br>        
+          <b>Shop Online, Stay Cozy:</b>
+<br>          
+          Can't make it to the store? No worries! Explore our winter wonderland online and enjoy the convenience of doorstep delivery. Visit <u>www.lhiverwf.com.ph</u> to browse the collection and place your orders today.
+<br>
+<br>         
+          <b>Connect with Us:</b>
+<br>          
+          Stay updated on the latest arrivals, fashion tips, and exclusive offers by following us on social media. Join our community of winter fashion enthusiasts on Instagram, Facebook, and Twitter.
+<br>
+<br>          
+          <b>L'HIVER Winter Fashion - Where Every Flake is a Fashion Statement!</b>
+<br>
+<br>         
+          <b>L'HIVER Winter Fashion</b>
+<br>
+          <b>Address:</b> Ampayon, Butuan City 8600
+<br>
+          <b>Website:</b> <u>www.lhiverwf.com.ph</u>
+<br>
+          <b>Contact:</b> James Earl Cubillas <u>#09123456789</u>
+<br>         
+          Warm up to winter, embrace the style!  <b>#LHIVERWinterFashion #WinterStyleRevolution</b>
+        </p>
+        <div class="w3-row-padding">
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="shaina.jpg" alt="Dumaplin" style="width: 100%;">
+            <h3>Shaina Mae P. Dumaplin</h3>
+            <p class="w3-opacity">BSIS-1 Student</p>
+            <p>"Don't just add years to your life but add life to your years."</p>
+            <p><button class="w3-button w3-black w3-block">Contact</button></p>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <img src="diane.jpg" alt="Largoza" style="width:100%">
+            <h3>Diane Caryl Largoza</h3>
+            <p class="w3-opacity">BSIS-1 Student</p>
+            <p>"Following the compass of my heart, towards a horizon yet unseen" </p>
+            <p><button class="w3-button w3-black w3-block">Contact</button></p>
+          </div>
+          <div class="w3-container">
+            <h4><b>Store</b></h4>
+            <p><i class="fa fa-fw fa-map-marker"></i> Ampayon, Butuan City 8600</p>
+            <p><i class="fa fa-fw fa-phone"></i> 09636</p>
+            <p><i class="fa fa-fw fa-envelope"></i> l'hiverwf@gmail.com</p>
+            <h4><b>We accept</b></h4>
+            <p><i class="fa fa-fw fa-cc-amex"></i> Palawan Suki Card</p>
+            <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+            <br>
+            <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+            <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+            <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+            <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+            <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+          </div>  
+          <div class="w3-col s4 w3-justify"></div>
+        <footer class="w3-center w3-black w3-padding-16">
+      <p>&copy;2023 <b>L'HIVER  Winter Fashion.</b> <u>All Rights Reserve.</u></a></p>
+    </footer>
+  <!-- End page content -->
+</div>
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="showMessage('Subscribed successfully!')" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function enterWebsite() {
+      // Add any logic you need when the user clicks the "Enter" button
+      // For now, let's just remove the overlay
+      document.querySelector('.overlay').style.display = 'none';
+      document.body.style.overflow = 'auto'; // Show scrollbar
+  }
+</script>
+
+<script>
+  function refreshHomePage() {
+      location.reload(); // Reload the current page
+  }
+
+  function redirectToLoginPage() {
+      window.location.href = 'form.html';
+      console.log('Redirect to login page');
+  }
+</script>
+
+<script>
+  function w3_open() {
+    document.getElementById("mysidebar").style.width = "100px";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+
+  function w3_close() {
+    document.getElementById("mysidebar").style.width = "0";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+</script>
+
+<script>
+  function redirectToOrderSlip(productName, productPrice) {
+    // You can generate a unique order ID here if needed
+    const orderId = generateOrderId();
+
+    // Encode product details and order ID as query parameters
+    const queryParams = `?product=${encodeURIComponent(productName)}&price=${encodeURIComponent(productPrice)}&orderId=${encodeURIComponent(orderId)}`;
+
+    // Redirect to the order slip page with product details and order ID
+    window.location.href = `order-slip.html${queryParams}`;
+  }
+
+  function generateOrderId() {
+    // Implement your logic to generate a unique order ID (can be a timestamp, random string, etc.)
+    // For simplicity, using current timestamp here
+    return Date.now().toString();
+  }
+</script>
+
+</body>
+</html>
